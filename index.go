@@ -63,7 +63,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	if r.URL.Path == "/tty/socket" {
+	if r.URL.Path == "/pty/socket" {
 		handleSocket(w, r)
 		return
 	}

@@ -15,6 +15,7 @@
       html{ height: 100%; }
       body{ margin: 0; height: 100%; padding: 0px; }
       #terminal, #terminal > .xterm{ height: 100%; padding: 0px; }
+      #terminal > .xterm{ padding: 5px; box-sizing: border-box; }
       #error-message{
           text-align: center;
           font-size: 1.5em;
@@ -56,7 +57,7 @@
           var websocket = new WebSocket(
             (location.protocol === "https:" ? "wss://" : "ws://") +
               location.hostname + ((location.port) ? (":" + location.port) : "") +
-              "/tty/socket"
+              "/pty/socket"
           );
           websocket.binaryType = "arraybuffer";
           websocket.onopen = function(e) {
